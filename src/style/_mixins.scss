@@ -2,3 +2,20 @@
   margin-top: 0;
   font-size: $font-size;
 }
+
+@mixin btnStyle($color, $width) {
+  width: $width;
+  border-radius: $border-radius-base * 2;
+  padding: 4px;
+  border: 1px;
+  border-style: solid;
+  border-color: $primary-color;
+
+  @if $color == $primary-color {
+    background-color: $color;
+    color: $white;
+  } @else {
+    background-color: $body-bg;
+    color: $primary-color;
+  }
+}
