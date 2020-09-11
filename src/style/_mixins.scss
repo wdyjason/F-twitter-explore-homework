@@ -3,6 +3,12 @@
   font-size: $font-size;
 }
 
+@mixin flexLayout($h-postion) {
+  display: flex;
+  justify-content: $h-postion;
+  align-items: center;
+}
+
 @mixin btnStyle($color, $width) {
   width: $width;
   border-radius: $border-radius-base * 2;
