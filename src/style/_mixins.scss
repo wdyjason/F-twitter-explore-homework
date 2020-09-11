@@ -25,3 +25,16 @@
     color: $primary-color;
   }
 }
+
+@mixin inputStyle {
+  width: 100%;
+  background-color: transparent;
+  border-width: 0 0 2px 0;
+  border-color: $gray-dark;
+}
+
+@mixin marginTopBottomOnStart($top, $bottom) {
+  margin-top: 20px;
+  margin-bottom: 0;
+  align-self: flex-start;
+}

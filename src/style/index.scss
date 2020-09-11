@@ -26,8 +26,52 @@ main {
 }
 
 .login-box {
-  width: 50%;
-  border-width: 1px;
+  width: 380px;
+  border-width: 2px;
   border-style: solid;
   border-color: $gray-dark;
+  border-radius: $border-radius-base;
+  @include flexLayout(center);
+  flex-direction: column;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  & > * {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .username-label {
+    @include marginTopBottomOnStart(20px, 0);
+  }
+
+  .pwd-label {
+    @extend .username-label;
+    margin-top: 10px;
+  }
+
+  .forget-pwd {
+    @include marginTopBottomOnStart(10px, 10px);
+    color: $primary-color;
+  }
+
+  .username {
+    @include inputStyle;
+  }
+
+  .password {
+    @extend .username;
+  }
+
+  .login-btn {
+    @extend .login-btn-header;
+    width: 100%;
+  }
+
+  .register-btn {
+    @extend .register-btn-header;
+    width: 100%;
+  }
 }
