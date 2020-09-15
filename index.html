@@ -16,9 +16,13 @@
     </div>
   </header>
   <main>
+<!--    TODO feedback: 这里应该使用form标签，因为它是一个form-->
     <div class="login-box">
+      <!--      TODO feedback: 这行文字，它只是在样式上加粗了，但是它并不是这个页面的heading, 所以不应该使用h标签，使用p标签，然后用css把它加粗就对了-->
       <h2 class="login-title">查看世界上正在发生的事情</h2>
+<!--      TODO feedback: label标签一般需要加一个for属性，下来了解一下label标签的正确使用-->
       <label class="username-label">电话、邮件地址或用户名</label>
+<!--      TODO feedback: input标签是一个closing tag,使用的时候是这样的：<input />,而不是<input></input>这样的。-->
       <input class="username" type="text"></input>
       <label class="pwd-label">密码</label>
       <input class="password" type="text"></input>

@@ -2,17 +2,20 @@
   margin-top: 0;
   font-size: $font-size;
 }
-
+//TODO feedback: css class的命名应该是a-b格式，scss里面的mixin也是一样的
 @mixin flexLayout($h-postion) {
   display: flex;
   justify-content: $h-postion;
   align-items: center;
 }
 
+//TODO feedback: css class的命名应该是a-b格式，scss里面的mixin也是一样的
+// class 的取名要体现业务逻辑，而不是它在代码里面的概念，这里改为base-btn更好
 @mixin btnStyle($color, $width) {
   width: $width;
   border-radius: $border-radius-base * 2;
   padding: 4px;
+  //TODO feedback: 以下的三行代码可以和为一行：border：1px solid $primary-color
   border: 1px;
   border-style: solid;
   border-color: $primary-color;
@@ -25,7 +28,7 @@
     color: $primary-color;
   }
 }
-
+//TODO feedback: class 的取名要体现业务逻辑，而不是它在代码里面的概念，这里改为input或者form-input更好
 @mixin inputStyle {
   width: 100%;
   background-color: transparent;
@@ -33,6 +36,8 @@
   border-color: $gray-dark;
 }
 
+//TODO feedback: css class的命名应该是a-b格式，scss里面的mixin也是一样的
+// 这个mixin定义了参数，但是又没有使用
 @mixin marginTopBottomOnStart($top, $bottom) {
   margin-top: 20px;
   margin-bottom: 0;

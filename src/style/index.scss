@@ -2,20 +2,24 @@
 @import "mixins";
 @import "reboot";
 
+//TODO feedback: 尽量不要使用标签选择器，而使用class选择器
 header {
   width: 100%;
   height: 10%;
   border-width: 0 0 1px 0;
   border-style: solid;
   border-color: $gray-dark;
+  //TODO feedback: css class的命名应该是a-b格式，scss里面的mixin也是一样的
   @include flexLayout(space-between);
   padding: 20px;
 }
-
+//TODO feedback: .login-btn-header 只给 .login-btn一个人使用了
+// 那么这里就没必要抽取这一个class出来
 .login-btn-header {
   @include btnStyle($gray-dark, 80px);
 }
-
+//TODO feedback: .register-btn-header 只给 .register-btn一个人使用了
+// 那么这里就没必要抽取这一个class出来
 .register-btn-header {
   @include btnStyle($primary-color, 80px);
 }
@@ -33,6 +37,7 @@ main {
   border-radius: $border-radius-base;
   @include flexLayout(center);
   flex-direction: column;
+  //TODO feedback: 下面的4行代码可以合并为一行padding: 30px 40px
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 30px;
@@ -47,6 +52,7 @@ main {
     @include marginTopBottomOnStart(20px, 0);
   }
 
+  //TODO feedback: 最好不要用单词缩写
   .pwd-label {
     @extend .username-label;
     margin-top: 10px;
@@ -60,7 +66,8 @@ main {
   .username {
     @include inputStyle;
   }
-
+  // TODO feedback: .password也@include inputStyle就好了
+  //  从逻辑上讲 .password也不应该去继承.username, 因为他们在同级的
   .password {
     @extend .username;
   }
